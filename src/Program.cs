@@ -58,7 +58,7 @@ namespace CorePro.SDK
         }
 
 
-        public async static Task<Program> GetAsync(CancellationToken cancellationToken, Connection connection = null, object userDefinedObjectForLogging = null)
+        public static async Task<Program> GetAsync(CancellationToken cancellationToken, Connection connection = null, object userDefinedObjectForLogging = null)
         {
             connection = connection ?? Connection.CreateFromConfig();
             var rv = await Requestor.GetAsync<Program>(cancellationToken, "program/get", connection, userDefinedObjectForLogging);
